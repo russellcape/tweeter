@@ -25,6 +25,10 @@
     <!-- Tweets CSS -->
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
+    <!-- Fonts CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" type="text/css" /> -->
+    <link href="./fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     
@@ -33,6 +37,10 @@
 
     <!-- Char Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Hover Tweer JS -->
+    <script type="text/javascript" src="/scripts/tweet-hover.js"></script>
+
   </head>
   
   <body>
@@ -42,7 +50,7 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header class="tweeter-head">
         <div>
             <img src="/images/profile-hex.png"> 
         </div>
@@ -53,21 +61,39 @@
     </header>
 
     <!-- Page-specific (main) content here -->
+
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea class="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
 
       <!-- Posted tweets will be added here-->
-      <article>
-        <div class="tweets">
+
+      <section class="older-posts">
+      <article class="tweet-container">
+
+      <header class="tweet-header">
+        <p class="logo-user"><img src="https://i.imgur.com/73hZDYK.png"></p>
+        <p class="user">User</p>
+        <p class="post-poster">@username</p>
+      </header>
+      <p class="old-tweets">Tweeter post...</p>
+      <footer class="tweet-footer">
+        <p class="posted-time">how long ago it was posted</p>
+        <div class="icons">
+          <i class="fas fa-flag fa-xs"></i>
+          <i class="fas fa-retweet fa-xs"></i>
+          <i class="fas fa-heart fa-xs"></i>
         </div>
+      </footer>
+
       </article>
+      </section>
     </main>
 </body>
 </html>
