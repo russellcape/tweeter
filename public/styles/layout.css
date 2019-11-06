@@ -8,6 +8,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Bungee', cursive;
 }
 
 /*
@@ -18,8 +19,17 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ .container {
+  width: 90%;
+  background-color: #f4f1ec;
+  margin: auto;
+  margin-top: 420px;
+  padding: 2em;
+}

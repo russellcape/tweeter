@@ -1,0 +1,9 @@
+header {
+  margin-top: 140px;
+  height: 400px;
+  width: 100%;
+  color: #646565;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
