@@ -1,14 +1,17 @@
 header.tweeter-head {
-  margin-top: 12%;
+  margin-top: 10%;
   height: 400px;
   width: 100%;
-  color: #646565;
+  color: white;
+  background-color: #646565;
+  background-image: url('../images/45-degree-fabric-light.png');
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 
 header h2 {
 margin: 0px;

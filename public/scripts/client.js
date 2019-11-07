@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
-    $(".older-posts").append(createTweetElement(tweet))
+    $(".older-posts").prepend(createTweetElement(tweet))
   }
 };
 
@@ -25,7 +25,7 @@ const markup = `
   </header>
   <p class="old-tweets">${tweet.content.text}</p>
   <footer class="tweet-footer">
-  <p class="posted-time">${tweet.created_at}</p>
+  <p class="posted-time">${getTheCurrentTime(tweet.created_at)}</p>
   <div class="icons">
     <i class="fas fa-flag fa-xs"></i>
     <i class="fas fa-retweet fa-xs"></i>
@@ -42,16 +42,24 @@ const handleNewTweets = (function() {
   form.on('submit', function (event) {
     event.preventDefault();
     const formDataStr = $(this).serialize()
+    const textContent = $('.tweet-text').val();
+    console.log(textContent)
     console.log('Button clicked, performing ajax call...');
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: formDataStr
-    }).then(function (postedTweets) {
-      $('.new-tweet-form').val('');
-      $('.counter').html(140);
-      loadNewTweets(postedTweets);
-    })
+    if (textContent === null || textContent === '') {
+      alert("Your tweet must be at least 1 character")
+    } else if (textContent.length > 140) {
+      alert("Your tweet is too long. It must be under 140 characters")
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: formDataStr
+      }).then(function (postedTweets) {
+        $('.tweet-text').text();
+        $('.counter').html(140);
+        loadNewTweets(postedTweets);
+      })
+    }
   }) 
 });
 handleNewTweets()
@@ -69,6 +77,12 @@ const loadNewTweets = function() {
   })
 };
 
+const getTheCurrentTime = function(postDate) {
+ const time = moment(postDate).fromNow()
+  return time;
+}
 });
+
+
 
 
