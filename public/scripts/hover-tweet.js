@@ -3,7 +3,7 @@ console.log("Dom ready")
 
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".post-poster").css( {
-      "opacity": .5,
+      "opacity": .4,
       "color": "#212529",
     })
   })
@@ -20,11 +20,11 @@ console.log("Dom ready")
       "color": "#C5CBE3",
     })
   })
-
+  
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".logo").css( {
-     "opacity": .6,
-      "color": "black",
+      "opacity": .8,
+      "color": "#C5CBE3",
     })
   })
 
@@ -66,13 +66,14 @@ console.log("Dom ready")
 
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".icons").css( {
-      "color": "#C5CBE3"
+      "color": "#4056A1",
+      "opacity": "1"
     })
   })
 
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".icons").css( {
-      "color": "#C5CBE3"
+      "opacity": ".8"      
     })
   })
 

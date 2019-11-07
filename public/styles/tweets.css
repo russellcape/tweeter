@@ -7,15 +7,14 @@
   flex-direction: column;
   border: 3px solid #4a4750;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   height: auto;
+  margin: 2em;
 }
 
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  font-family: Arial, Helvetica, sans-serif;
   border: 1px solid red;
   height: 33%;
   padding: 3px 20px 3px 20px;
@@ -26,10 +25,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  opacity: .8,
+
 }
 
 .user{
-  font-family: Arial, Helvetica, sans-serif; 
   font-size: 26px;
   margin: 0;
   display: flex;
@@ -39,7 +39,8 @@
 }
 
 .post-poster {
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
   vertical-align: middle;
   margin: 0;
   display: flex;
@@ -49,7 +50,6 @@
 }
 
 .old-tweets {
-  font-family: Arial, Helvetica, sans-serif;
   border: 1px solid red;
   height: 33%;
   vertical-align: middle;
@@ -57,7 +57,6 @@
 }
 
 .tweet-footer {
-  font-family: Arial, Helvetica, sans-serif;
   border-top: 3px solid #4a4750;
   margin: auto;
   width: 98%;
@@ -68,13 +67,19 @@
 }
 
 .posted-time {
-  font-family: Arial, Helvetica, sans-serif;
   vertical-align: middle;
   margin: 0;
 }
 
+.icons {
+  color: #4056A1;
+  opacity: .8;
+}
+
+
+
 /* Selector's */
 
-.older-posts:hover {
+.tweet-container:hover {
   box-shadow: 10px 10px #C5CBE3;
 }

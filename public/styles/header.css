@@ -1,5 +1,5 @@
 header.tweeter-head {
-  margin-top: 140px;
+  margin-top: 12%;
   height: 400px;
   width: 100%;
   color: #646565;
@@ -8,4 +8,8 @@ header.tweeter-head {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+header h2 {
+margin: 0px;
 }

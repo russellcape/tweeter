@@ -28,23 +28,21 @@ const data = [
   }
 ]
 
+$(document).ready(function() {
+
 const renderTweets = function(tweets) {
-  $(".older-posts").empty();
-  tweets.forEach(data => {
-    $(".older-posts").prepend(createTweetElement(data));
-  });
-  
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-}
+  for (let tweet of tweets) {
+    $(".older-posts").append(createTweetElement(tweet))
+  }
+};
 
 const createTweetElement = function(tweet) {
-const $tweet = $('<article.tweet-container>').addClass('tweet');
+// const $tweet = $('<article.tweet-container>').addClass('tweet');
 
 const markup = `
+<article class="tweet-container">
 <header class="tweet-header">
-<p class="logo-user"><img src="${tweet.user.avatar}"></p>
+<p class="logo"><img src="${tweet.user.avatars}"></p>
 <p class="user">${tweet.user.name}</p>
 <p class="post-poster">${tweet.user.handle}</p>
 </header>
@@ -57,47 +55,15 @@ const markup = `
   <i class="fas fa-heart fa-xs"></i>
 </div>
 </footer>
-  `;
+</article>
+`;
 
 
-return $tweet;
+return markup;
 }
 
 renderTweets(data);
 
-
-
-
-/*
-$(document).ready(function() {
-
-const createTweetElement = function(tweetObj) {
-  $tweet = $("<article>").addClass("tweet");
-  let html = `
-    <header>
-      <img src=${tweetObj.user.avatars.small} alt="user-avatar"/>
-      <h1>${tweetObj.user.name}</h1>
-      <h2>${tweetObj.user.handle}</h2>
-    </header>
-    <div class="tweet-body">
-      <p>
-        ${tweetObj.content.text}
-      </p>
-    </div>
-    <footer>
-      <p>
-      ${getTheCurrentTime(tweetObj.created_at)}
-      </p>
-      <span>
-        <i class="fa fa-flag" aria-hidden="true"></i>
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-        <i class="fa fa-heart" aria-hidden="true"></i>
-      </span>
-    </footer>
-  `;
-  $tweet = $tweet.append(html);
-  return $tweet;
-  }
-  
 });
-  */
+
+
