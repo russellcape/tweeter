@@ -15,7 +15,6 @@
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
   height: 33%;
   padding: 3px 20px 3px 20px;
   vertical-align: middle;
@@ -50,7 +49,6 @@
 }
 
 .old-tweets {
-  border: 1px solid red;
   height: 33%;
   vertical-align: middle;
   padding: 3px 20px 3px 20px;

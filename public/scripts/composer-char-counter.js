@@ -5,5 +5,8 @@ $(document).ready(function() {
     if ($(this).val().length > 140) {
     $("form span.counter").addClass("red")
     }
+    else {
+    $("form span.counter").removeClass("red")
+    }
   })
 });

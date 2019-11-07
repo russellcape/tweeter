@@ -1,5 +1,6 @@
-$(document).ready(function() {
-console.log("Dom ready")
+
+  // console.log("Dom ready")
+  const hoverActions = () => {
 
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".post-poster").css( {
@@ -7,13 +8,13 @@ console.log("Dom ready")
       "color": "#212529",
     })
   })
-
+  
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".post-poster").css( {
       "opacity": 0
     })
   })
-
+  
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".logo").css( {
       "opacity": 1,
@@ -27,31 +28,31 @@ console.log("Dom ready")
       "color": "#C5CBE3",
     })
   })
-
+  
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".user").css( {
       "font-weight": "bold",
     })
   })
-
+  
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".user").css( {
       "font-weight": "normal",
     })
   })
-
+  
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".old-tweets").css( {
       "font-weight": "bold",
     })
   })
-
+  
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".old-tweets").css( {
       "font-weight": "normal",
     })
   })
-
+  
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".posted-time").css( {
       "font-weight": "bold",
@@ -63,18 +64,21 @@ console.log("Dom ready")
       "font-weight": "normal",
     })
   })
-
+  
   $(".tweet-container").on("mouseenter", function() {
     $(this).find(".icons").css( {
       "color": "#4056A1",
       "opacity": "1"
     })
   })
-
+  
   $(".tweet-container").on("mouseleave", function() {
     $(this).find(".icons").css( {
       "opacity": ".8"      
     })
   })
 
-});
+}
+  $(document).ready(function() {
+    hoverActions()
+  });
