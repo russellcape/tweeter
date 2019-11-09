@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## ScreenShots
+
+!["Screenshot of tweeter page on a desktop"](https://github.com/russellcape/tweeter/blob/master/docs/tweet-page-large.png)
+
+!["Screenshot of tweeter page for small devices"](https://github.com/russellcape/tweeter/blob/master/docs/tweet-page-small.png)
