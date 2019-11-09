@@ -1,7 +1,7 @@
  nav {
   display: flex;
   justify-content: space-between;
-  height: 120px;
+  height: 115px;
   width: 100%;
   background-color: #4056a1;
   color: #ffffff;
@@ -18,9 +18,57 @@
   text-decoration: none;
   color: #ffffff;
   outline: none;
-  margin-bottom: 3%;
   cursor: pointer;
+  height: 120%;
 }
 
+.arrow{
+  position: absolute;
+  top: 78%;
+  left: 89%;
+  transform: translate(-50%,-50%) scaleY(.44) scaleX(.44);
+}
 
+.arrow span{
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-bottom: 3px solid #06A8FF;
+  border-right: 3px solid #06A8FF;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2){
+  animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: #646565;
+    background-image: url('../images/45-degree-fabric-light.png');
+  }
+  .arrow span{
+    border-bottom: 5px solid #E53F2C;
+    border-right: 5px solid #E53F2C;
+  }
+}
 
