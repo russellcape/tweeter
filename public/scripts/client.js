@@ -2,8 +2,6 @@
 //  * jQuery is already loaded
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 
-// Fake data taken from initial-tweets.json
-
 
 $(document).ready(function() {
 
@@ -74,7 +72,7 @@ const loadNewTweets = function() {
     method: 'GET',
     dataType: "json",
     success: function (data) {
-      console.log('Success: ', data);
+      //console.log('Success: ', data);
       renderTweets(data);
       hoverActions()
     }
