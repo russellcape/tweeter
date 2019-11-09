@@ -1,18 +1,20 @@
 header.tweeter-head {
-  margin-top: 10%;
-  height: 400px;
   width: 100%;
+  margin-top: 120px;
   color: white;
   background-color: #646565;
   background-image: url('../images/45-degree-fabric-light.png');
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  font-size: 80%;
 }
 
+.profile-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-header h2 {
-margin: 0px;
+.account-name {
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }

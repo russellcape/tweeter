@@ -43,12 +43,16 @@ const handleNewTweets = (function() {
     event.preventDefault();
     const formDataStr = $(this).serialize()
     const textContent = $('.tweet-text').val();
-    console.log(textContent)
+    //console.log(textContent)
     console.log('Button clicked, performing ajax call...');
-    if (textContent === null || textContent === '') {
-      alert("Your tweet must be at least 1 character")
+    if (textContent === null || textContent === '') {  
+      $('.error-short').slideToggle("slow", function() {
+      });
+      //alert("Your tweet must be at least 1 character")
     } else if (textContent.length > 140) {
-      alert("Your tweet is too long. It must be under 140 characters")
+        $('.error-long').slideToggle("slow", function() {
+        });
+      //alert("Your tweet is too long. It must be under 140 characters")
     } else {
       $.ajax({
         method: 'POST',
@@ -81,6 +85,13 @@ const getTheCurrentTime = function(postDate) {
  const time = moment(postDate).fromNow()
   return time;
 }
+
+$( ".write-new-tweet" ).click(function() {
+  $( ".new-tweet-form" ).slideToggle( "slow", function() {
+    $(".tweet-text").focus()
+  });
+});
+
 });
 
 
