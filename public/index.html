@@ -3,6 +3,8 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximux-scale=1.0">
     
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -46,17 +48,17 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>Tweeter</span>
-      <span class="write-new-tweet"><b>Write</b> a new tweet</span>
+      <button class="write-new-tweet"><b>Write</b> a new tweet</button>
     </nav>
 
     <!-- Header -->
     <header class="tweeter-head">
         <div>
-            <img src="/images/profile-hex.png"> 
+            <img class="profile-pic" src="/images/profile-hex.png"> 
         </div>
         <br>
-        <div class="account-name">
-            <h2>Russell Cape</h2>
+        <div>
+            <h2 class="account-name">Russell Cape</h2>
         </div>
     </header>
 
@@ -65,6 +67,16 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <p class="error-short">
+          <i class="fas fa-exclamation-triangle"></i>
+          Your tweet must be at least 1 character
+          <i class="fas fa-exclamation-triangle"></i>
+        </p>
+        <p class="error-long">
+            <i class="fas fa-exclamation-triangle"></i>
+          Your tweet is too long. It must be under 140 characters
+          <i class="fas fa-exclamation-triangle"></i>
+        </p>
         <form class="new-tweet-form" method="POST" action="/tweets">
           <textarea class="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
           <input class="tweet-button" type="submit" value="Tweet">
