@@ -16,20 +16,20 @@ const createTweetElement = function(tweet) {
 
 const markup = `
   <article class="tweet-container">
-  <header class="tweet-header">
-  <p class="logo"><img src="${tweet.user.avatars}"></p>
-  <p class="user">${tweet.user.name}</p>
-  <p class="post-poster">${tweet.user.handle}</p>
-  </header>
-  <p class="old-tweets">${tweet.content.text}</p>
-  <footer class="tweet-footer">
-  <p class="posted-time">${getTheCurrentTime(tweet.created_at)}</p>
-  <div class="icons">
-    <i class="fas fa-flag fa-xs"></i>
-    <i class="fas fa-retweet fa-xs"></i>
-    <i class="fas fa-heart fa-xs"></i>
-  </div>
-  </footer>
+    <header class="tweet-header">
+      <p class="logo"><img src="${tweet.user.avatars}"></p>
+      <p class="user">${tweet.user.name}</p>
+      <p class="post-poster">${tweet.user.handle}</p>
+    </header>
+    <p class="old-tweets">${tweet.content.text}</p>
+    <footer class="tweet-footer">
+      <p class="posted-time">${getTheCurrentTime(tweet.created_at)}</p>
+      <div class="icons">
+        <i class="fas fa-flag fa-xs"></i>
+        <i class="fas fa-retweet fa-xs"></i>
+        <i class="fas fa-heart fa-xs"></i>
+      </div>
+    </footer>
   </article>
   `;
   return markup;
@@ -45,10 +45,16 @@ const handleNewTweets = (function() {
     console.log('Button clicked, performing ajax call...');
     if (textContent === null || textContent === '') {  
       $('.error-short').slideToggle("slow", function() {
+        $('.tweet-text').click(function(){
+          $('.error-short').slideToggle("slow")
+        })
       });
       //alert("Your tweet must be at least 1 character")
     } else if (textContent.length > 140) {
         $('.error-long').slideToggle("slow", function() {
+          $('.tweet-text').click(function(){
+            $('.error-long').slideToggle("slow")
+          })
         });
       //alert("Your tweet is too long. It must be under 140 characters")
     } else {
@@ -86,10 +92,13 @@ const getTheCurrentTime = function(postDate) {
 
 $( ".write-new-tweet" ).click(function() {
   $( ".new-tweet-form" ).slideToggle( "slow", function() {
-    $(".tweet-text").focus()
+    $(".tweet-text").focus();
   });
 });
 
+  $(".new-tweet-form").submit(function() {
+    $(".tweet-text").val('')
+  })
 });
 
 
