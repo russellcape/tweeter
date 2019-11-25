@@ -5,6 +5,10 @@
   width: 85%;
 }
 
+.new-tweet-form {
+  display: none;
+}
+
 .new-tweet h2 {
   visibility: hidden;
   margin-bottom: 0;
