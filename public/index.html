@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximux-scale=1.0">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
-    
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    
-    <!--  Nav CSS -->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximux-scale=1.0">
 
-    <!-- Newtweet CSS -->
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- Header CSS -->
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <!-- Fonts CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
 
-    <!-- Tweets CSS -->
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-    
-    <!-- Hover Tweer JS -->
-    <script type="text/javascript" src="/scripts/hover-tweet.js"></script>
-    
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+  <!--  Nav CSS -->
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- Char Counter JS -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <!-- Newtweet CSS -->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!-- Header CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <!-- Tweets CSS -->
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
+    integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+
+  <!-- Hover Tweer JS -->
+  <script type="text/javascript" src="/scripts/hover-tweet.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <!-- Char Counter JS -->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
 
-  </head>
-  
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav class="nav-bar">
-      <span>Tweeter</span>
-      <button class="write-new-tweet"><b>Write</b> a new tweet
-        <div class="arrow">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-    </nav>
+</head>
 
-    <!-- Header -->
-    <div class="desktop">
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="nav-bar">
+    <span>Tweeter</span>
+    <button class="write-new-tweet"><b>Write</b> a new tweet
+      <div class="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </nav>
+
+  <!-- Header -->
+  <div class="desktop">
     <header class="tweeter-head">
-        <div>
-            <img class="profile-pic" src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div>
-            <h2 class="account-name">Russell Cape</h2>
-        </div>
+      <div>
+        <img class="profile-pic" src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2 class="account-name">Russell Cape</h2>
+      </div>
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -80,7 +83,7 @@
           <i class="fas fa-exclamation-triangle"></i>
         </p>
         <p class="error-long">
-            <i class="fas fa-exclamation-triangle"></i>
+          <i class="fas fa-exclamation-triangle"></i>
           Your tweet is too long. It must be under 140 characters
           <i class="fas fa-exclamation-triangle"></i>
         </p>
@@ -94,10 +97,11 @@
       <!-- Posted tweets will be added here-->
 
       <section class="older-posts">
-      
+
 
       </section>
     </main>
-    </div>
+  </div>
 </body>
+
 </html>

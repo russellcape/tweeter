@@ -3,18 +3,18 @@
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-const renderTweets = function(tweets) {
-  for (let tweet of tweets) {
-    $(".older-posts").prepend(createTweetElement(tweet))
-  }
-};
+  const renderTweets = function (tweets) {
+    for (let tweet of tweets) {
+      $(".older-posts").prepend(createTweetElement(tweet))
+    }
+  };
 
-const createTweetElement = function(tweet) {
-// const $tweet = $('<article.tweet-container>').addClass('tweet');
+  const createTweetElement = function (tweet) {
+    // const $tweet = $('<article.tweet-container>').addClass('tweet');
 
-const markup = `
+    const markup = `
   <article class="tweet-container">
     <header class="tweet-header">
       <p class="logo"><img src="${tweet.user.avatars}"></p>
@@ -32,71 +32,76 @@ const markup = `
     </footer>
   </article>
   `;
-  return markup;
-}
+    return markup;
+  }
 
-const handleNewTweets = (function() {
-  const form = $('.new-tweet-form');
-  form.on('submit', function (event) {
-    event.preventDefault();
-    const formDataStr = $(this).serialize()
-    const textContent = $('.tweet-text').val();
-    //console.log(textContent)
-    console.log('Button clicked, performing ajax call...');
-    if (textContent === null || textContent === '') {  
-      $('.error-short').slideToggle("slow", function() {
-        $('.tweet-text').click(function(){
-          $('.error-short').slideToggle("slow")
-        })
-      });
-      //alert("Your tweet must be at least 1 character")
-    } else if (textContent.length > 140) {
-        $('.error-long').slideToggle("slow", function() {
-          $('.tweet-text').click(function(){
-            $('.error-long').slideToggle("slow")
-          })
+  const handleNewTweets = (function () {
+    const form = $('.new-tweet-form');
+    form.on('submit', function (event) {
+      event.preventDefault();
+      const formDataStr = $(this).serialize()
+      const textContent = $('.tweet-text').val();
+      //console.log(textContent)
+      console.log('Button clicked, performing ajax call...');
+      if (textContent === null || textContent === '') {
+        $('.error-short').slideToggle("slow", function () {
         });
-      //alert("Your tweet is too long. It must be under 140 characters")
-    } else {
-      $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: formDataStr
-      }).then(function (postedTweets) {
-        $('.tweet-text').text();
-        $('.counter').html(140);
-        loadNewTweets(postedTweets);
-      })
-    }
-  }) 
-});
-handleNewTweets()
-
-const loadNewTweets = function() {
-  $.ajax({
-    url: `/tweets`,
-    method: 'GET',
-    dataType: "json",
-    success: function (data) {
-      //console.log('Success: ', data);
-      renderTweets(data);
-      hoverActions()
-    }
-  })
-};
-
-const getTheCurrentTime = function(postDate) {
- const time = moment(postDate).fromNow()
-  return time;
-}
-
-$( ".write-new-tweet" ).click(function() {
-  $( ".new-tweet-form" ).slideToggle( "slow", function() {
-    $(".tweet-text").focus();
+        setTimeout(function () {
+          $('.error-short').slideToggle("slow", function () {
+          });
+        }, 2000)
+        //alert("Your tweet must be at least 1 character")
+      } else if (textContent.length > 140) {
+        $('.error-long').slideToggle("slow", function () {
+        });
+        setTimeout(function () {
+          $('.error-long').slideToggle("slow", function () {
+          });
+        }, 2000)
+        //alert("Your tweet is too long. It must be under 140 characters")
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: '/tweets',
+          data: formDataStr
+        }).then(function (postedTweets) {
+          $('.tweet-text').text();
+          $('.counter').html(140);
+          loadNewTweets(postedTweets);
+        })
+      }
+    })
   });
-});
+  handleNewTweets()
 
-  $(".new-tweet-form").submit(function() {
+  const loadNewTweets = function () {
+    $.ajax({
+      url: `/tweets`,
+      method: 'GET',
+      dataType: "json",
+      success: function (data) {
+        //console.log('Success: ', data);
+        renderTweets(data);
+        hoverActions()
+      }
+    })
+  };
+
+  loadNewTweets()
+
+  const getTheCurrentTime = function (postDate) {
+    const time = moment(postDate).fromNow()
+    return time;
+  }
+
+loadNewTweets()
+  $(".write-new-tweet").click(function () {
+    $(".new-tweet-form").slideToggle("slow", function () {
+      $(".tweet-text").focus();
+    });
+  });
+
+  $(".new-tweet-form").submit(function () {
     $(".tweet-text").val('')
   })
 });
